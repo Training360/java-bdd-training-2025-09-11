@@ -14,9 +14,10 @@ public class CoursesPage {
         page.navigate("http://localhost:%d".formatted(port));
     }
 
-    public void announce(String code, String name) {
+    public void announce(String code, String name, int limit) {
         page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("code")).fill(code);
         page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("name")).fill(name);
+        page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("limit")).fill(Integer.toString(limit));
         page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Announce")).click();
     }
 

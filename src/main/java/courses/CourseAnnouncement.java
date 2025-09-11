@@ -7,5 +7,10 @@ public record CourseAnnouncement(
         @NotBlank
         String code,
         @NotBlank
-        String name) {
+        String name,
+        int limit) {
+
+        public CourseAnnouncement(String code, String name) {
+                this(code, name, 0);
+        }
 }

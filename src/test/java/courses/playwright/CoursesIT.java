@@ -49,7 +49,7 @@ class CoursesIT {
         CoursesPage coursesPage = new CoursesPage(page);
         coursesPage.navigate(port);
         String code = "course-" + UUID.randomUUID();
-        coursesPage.announce(code, "Java");
+        coursesPage.announce(code, "Java", 0);
         coursesPage.containsCourse(code);
     }
 
@@ -58,7 +58,7 @@ class CoursesIT {
         CoursesPage coursesPage = new CoursesPage(page);
         coursesPage.navigate(port);
         String code = "course-" + UUID.randomUUID();
-        coursesPage.announce(code, "Java");
+        coursesPage.announce(code, "Java", 0);
 
         CoursePage coursePage = new CoursePage(page);
         coursePage.navigate(port, code);
