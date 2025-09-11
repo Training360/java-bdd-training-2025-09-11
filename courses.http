@@ -1,0 +1,22 @@
+###  Announce course
+POST http://localhost:8080/api/courses
+Content-Type: application/json
+
+{
+  "code": "course-001",
+  "name": "Java"
+}
+
+### Find all courses
+GET http://localhost:8080/api/courses
+
+### Enroll in course
+POST http://localhost:8080/api/courses/course-002/enrollments
+Content-Type: application/json
+
+{
+  "name": "John {{$random.uuid}}"
+}
+
+### Find all enrollments in course
+GET http://localhost:8080/api/courses/a/enrollments

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Courses</title>
+</head>
+<body>
+
+<div th:if="${message}" th:text="${message}" th:role="${role}">Saved</div>
+
+<form name="enroll-form" method="post" action="/enroll">
+    <input name="courseCode" type="hidden" th:value="${course.code}" required>
+    <input name="name" type="text" placeholder="Name" required>
+    <button type="submit">Enroll</button>
+</form>
+
+<p>
+<span th:text="${course.code}"></span> <span th:text="${course.name}"></span>
+</p>
+
+<ul>
+    <li th:each="enrollment : ${enrollments}" th:text="${enrollment}"></li>
+</ul>
+
+<a href="/">Back to courses</a>
+
+</body>

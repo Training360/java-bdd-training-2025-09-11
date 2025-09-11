@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Courses</title>
+</head>
+<body>
+
+<div th:if="${message}" th:text="${message}">Saved</div>
+
+<form name="announce-form" method="post" action="/announce">
+  <input name="code" type="text" placeholder="Code" required>
+  <input name="name" type="text" placeholder="Name" required>
+  <button type="submit">Announce</button>
+</form>
+
+<table>
+  <thead>
+  <tr>
+    <th>Code</th>
+    <th>Name</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <th:block th:each="course : ${courses}">
+    <tr>
+      <td><a th:href="@{/course(code=${course.code})}" th:text="${course.code}"></a></td>
+      <td th:text="${course.name}"></td>
+    </tr>
+  </th:block>
+  </tbody>
+</table>
+
+</body>
+</html>
